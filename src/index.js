@@ -2,6 +2,7 @@
 
 const program = require('commander')
 const chalk = require('chalk')
+const run = require('./run-tests')
 const log = console.log
 
 program
@@ -30,7 +31,11 @@ if (!program.dir) {
 // run locally
 if (program.dir && program.tests) {
   log(`Testing ${program.dir} with tests in ${program.tests}...`)
-  // 
+  // run
+  run({
+    dir: program.dir,
+    testDir: program.tests
+  })
 }
 
 // run on repo
