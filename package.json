@@ -1,0 +1,23 @@
+{
+  "name": "testee",
+  "version": "0.1.0",
+  "description": "school test runner",
+  "main": "src/index.js",
+  "author": "Shawn McKay <shawn.j.mckay@gmail.com>",
+  "contributors": [
+    "Ben Frisby <bfrisb@gmail.com>"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Shawn McKay <shawn.j.mckay@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0"
+  },
+  "bin": {
+    "testee": "index.js"
+  }
+}
