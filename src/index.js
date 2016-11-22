@@ -31,6 +31,9 @@ if (!program.dir) {
 // run locally
 if (program.dir && program.tests) {
   log(`Testing ${program.dir} with tests in ${program.tests}...`)
+
+  process.env.ROOT_DIR=program.dir
+  
   // run
   run({
     dir: program.dir,

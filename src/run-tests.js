@@ -12,6 +12,9 @@ function run({ dir, testDir }) {
     reporter: 'list'
   })
 
+  // set directory for tests
+  process.env.ROOT_DIR=dir
+
   fs.readdirSync(testDir)
     // match test files
     .filter((file) => file.match(testMatch))
