@@ -7,5 +7,7 @@ Test runner for grading student projects.
 Run "example" directory tests on "project" directory tests
 
 ```shell
-testee -p ./example/project -t ./example/tests
+testee -p ./example/p1 -t ./example/tests/p1
 ```
+
+
