@@ -1,5 +1,5 @@
 {
-  "name": "testee",
+  "name": "testee-check",
   "version": "0.1.0",
   "description": "school test runner",
   "main": "src/index.js",
@@ -20,5 +20,9 @@
   },
   "bin": {
     "testee": "src/index.js"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-plugin-react": "^6.7.1"
   }
 }

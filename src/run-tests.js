@@ -27,10 +27,10 @@ function run({ projectDir, testDir }) {
 
   mocha.run((failures) => {
 
-    console.log('running tests...')
+    process.stdout.write('running tests...')
 
     process.on('exit', () => {
-      console.log('complete')
+      process.stdout.write('complete!\n')
       process.exit(failures)
     })
   })

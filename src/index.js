@@ -13,7 +13,7 @@ program
   .option('-o --output <path/to/output>', 'The path to the output file')
   .parse(process.argv)
 
-const output = program.output || './output'
+// const output = program.output || './output'
 
 if (!program.project) {
   log('Testing requires a target student directory.\n\n',
