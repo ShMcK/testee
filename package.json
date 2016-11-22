@@ -8,7 +8,7 @@
     "Ben Frisby <bfrisb@gmail.com>"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [],
   "license": "ISC",
