@@ -7,19 +7,15 @@ const log = console.log
 
 program
   .arguments('<file>')
-  .option('-d, --dir <path/to/dir>', 'The path to project directory to test')
+  .option('-p, --project <path/to/project>', 'The path to project directory to test')
   .option('-t --tests <path/to/tests>', 'The path to the tests to run')
   .option('-r --repo <path/to/repo>', 'The path to the student repo')
   .option('-o --output <path/to/output>', 'The path to the output file')
   .parse(process.argv)
 
-const createConfig = (rootDir) => JSON.stringify({
-  rootDir
-})
-
 const output = program.output || './output'
 
-if (!program.dir) {
+if (!program.project) {
   log('Testing requires a target student directory.\n\n',
   'REPO\n',
   chalk.yellow('testee -t path/to/tests -r github.com/path/to/repo\n\n'),
@@ -29,14 +25,12 @@ if (!program.dir) {
 }
 
 // run locally
-if (program.dir && program.tests) {
-  log(`Testing ${program.dir} with tests in ${program.tests}...`)
+if (program.project && program.tests) {
+  log(`Testing ${program.project} with tests in ${program.tests}...`)
 
-  process.env.ROOT_DIR=program.dir
-  
   // run
   run({
-    dir: program.dir,
+    projectDir: program.project,
     testDir: program.tests
   })
 }

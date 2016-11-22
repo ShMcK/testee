@@ -1,10 +1,10 @@
 const Mocha = require('mocha')
 const fs = require('fs')
-const path = require('path')
+const { join } = require('path')
 
 const testMatch = /\.test\.js$/
 
-function run({ dir, testDir }) {
+function run({ projectDir, testDir }) {
 
   // Mocha instance
   const mocha = new Mocha({
@@ -12,8 +12,8 @@ function run({ dir, testDir }) {
     reporter: 'list'
   })
 
-  // set directory for tests
-  process.env.ROOT_DIR=dir
+  // set absolute path directory for tests
+  process.env.ROOT_DIR= join(process.cwd(), projectDir)
 
   fs.readdirSync(testDir)
     // match test files
@@ -21,7 +21,7 @@ function run({ dir, testDir }) {
     // add test files
     .forEach((file) => {
       mocha.addFile(
-        path.join(testDir, file)
+        join(testDir, file)
       )
     })
 
