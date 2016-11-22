@@ -17,9 +17,11 @@ describe('.gitignore', () => {
    'node_modules'
   ]
 
+  const ignored = readFileSync(pathToGitIgnore, 'utf8').split('\n')
+
+  // check for ignored files in .gitignore
   ignorePaths.forEach((ignorePath) => {
     it(`should ignore ${ignorePath}`, () => {
-      const ignored = readFileSync(pathToGitIgnore, 'utf8').split('\n')
       expect(ignored.includes(ignorePath)).toBe(true)
     })
   })
