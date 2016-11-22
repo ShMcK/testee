@@ -24,8 +24,6 @@ describe('package.json', () => {
 
   if (exists(pathToPackageJson)) {
 
-    const keys = ['name', 'description', 'version']
-
     const packageJson = readFileSync(pathToPackageJson, 'utf8')
 
     const isValidJson = isValidJsonString(packageJson)
@@ -39,12 +37,26 @@ describe('package.json', () => {
     if (isValidJson) {
 
       const packageJsonObject = JSON.parse(packageJson)
+      const keys = ['name', 'description', 'version', 'scripts']
 
       keys.forEach((key) => {
         it(`should include field of ${key}`, () => {
           expect(Object.keys(packageJsonObject).includes(key)).toBe(true)
         })
       })
+
+      const scripts = ['start']
+
+      // check for npm scripts
+      if (packageJsonObject.scripts) {
+        scripts.forEach((script) => {
+          it('should have a script of "start"', () => {
+            expect(typeof packageJsonObject.scripts[script]).toBe('string')
+          })
+        })
+      }
+
+
     }
   }
   
