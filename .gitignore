@@ -1,9 +1,2 @@
-# dirs
 node_modules
-
-# editor
-.DS_Store
-.vscode
-
-# npm
 npm-debug.log
