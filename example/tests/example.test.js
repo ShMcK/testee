@@ -10,4 +10,5 @@ describe('some test', () => {
   it('should run', () => {
     expect(life).toBe(42)
   })
+  
 })

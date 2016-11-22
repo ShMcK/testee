@@ -1,4 +1,4 @@
-# Test Runner (WIP)
+# Testee Check
 
 Test runner for grading student projects.
 

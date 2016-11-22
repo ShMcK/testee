@@ -20,7 +20,7 @@ if (!program.project) {
   'REPO\n',
   chalk.yellow('testee -t path/to/tests -r github.com/path/to/repo\n\n'),
   'LOCAL\n',
-  chalk.yellow('testee -t path/to/tests -d path/to/project/to/test')
+  chalk.yellow('testee -t path/to/tests -p path/to/project/to/test')
   )
 }
 
