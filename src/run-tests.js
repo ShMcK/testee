@@ -14,7 +14,8 @@ function run({ projectDir, testDir }) {
   // Mocha instance
   const mocha = new Mocha({
     ui: 'bdd',
-    reporter: 'list'
+    reporter: 'list',
+    timeout: 3000,
   })
 
   // set absolute path directory for tests
